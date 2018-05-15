@@ -48,4 +48,15 @@ public class Graph {
 	public Iterable<Integer> adj(int v){
 		return adj[v];
 	}
+	public String toString() {
+		String s=V+"vertices,"+E+"deges\n";
+		for(int v=0;v<V;v++) {
+			s+=v+":";
+			for(int w:this.adj(v)) {
+				s+=w+" ";
+			}
+			s+="\n";
+		}
+		return s;
+	}
 }
