@@ -1,6 +1,7 @@
 package forthUnit;
 
 import edu.princeton.cs.algs4.Bag;
+import edu.princeton.cs.algs4.In;
 
 public class Digraph {
 
@@ -16,6 +17,17 @@ public class Digraph {
 			adj[v]=new Bag<Integer>();
 		}
 		
+	}
+	public Digraph(In in) {
+		// TODO 自动生成的构造函数存根
+		this(in.readInt());//读取V并将图初始化
+		int E =in.readInt();
+		for(int i=0;i<E;i++) {
+			//添加一条边
+			int v=in.readInt();//读取一个顶点
+			int w=in.readInt();//读取一条边
+			addEdge(v, w);//添加一条他们的连接
+		}
 	}
 	public int V() {
 		return V;
